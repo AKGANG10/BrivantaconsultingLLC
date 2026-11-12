@@ -5,6 +5,7 @@
   const formStatus = document.querySelector("#form-status");
   const submitButton = contactForm?.querySelector("[type='submit']");
   const year = document.querySelector("#current-year");
+  const header = document.querySelector(".site-header");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   if (year) year.textContent = String(new Date().getFullYear());
@@ -51,6 +52,7 @@
 
   const revealItems = [...document.querySelectorAll("[data-reveal]")];
   if ("IntersectionObserver" in window && !reducedMotion) {
+    document.documentElement.classList.add("motion-enabled");
     const revealObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -104,6 +106,7 @@
     let frameRequested = false;
     const updateScrollEffects = () => {
       const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (header) header.classList.toggle("is-scrolled", window.scrollY > 14);
       if (progressBar) {
         const progress = scrollableHeight > 0 ? window.scrollY / scrollableHeight : 0;
         progressBar.style.transform = `scaleX(${Math.max(0, Math.min(1, progress))})`;
