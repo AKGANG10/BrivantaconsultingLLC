@@ -18,4 +18,4 @@ The contact form validates its fields and sends through EmailJS using the `Conta
 
 ## Image credit
 
-The local photographs are by Vitaly Gariev (<https://unsplash.com/photos/four-business-people-in-a-meeting-discussing-documents-YHC8oV7tcdM>), Aalo Lens (<https://unsplash.com/photos/modern-office-lounge-area-with-contemporary-furniture-QVVHV24DA_o>), and Rodrigo Rodrigues (<https://unsplash.com/photos/a-woman-smiles-while-working-on-her-laptop-GwLG4qG3y0U>) on Unsplash. They are available under the Unsplash License.
+The local photographs are by Vitaly Gariev (<https://unsplash.com/photos/four-business-people-in-a-meeting-discussing-documents-YHC8oV7tcdM>), Aalo Lens (<https://unsplash.com/photos/modern-office-lounge-area-with-contemporary-furniture-QVVHV24DA_o>), Rodrigo Rodrigues (<https://unsplash.com/photos/a-woman-smiles-while-working-on-her-laptop-GwLG4qG3y0U>), and Beatriz Cattel (<https://unsplash.com/photos/people-working-in-a-modern-office-with-large-windows-JtcJoKiz-m4>) on Unsplash. They are available under the Unsplash License.

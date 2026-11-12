@@ -5,6 +5,6 @@
  */
 window.BRIVANTA_EMAILJS_CONFIG = {
   serviceId: "service_d6czg85",
-  templateId: "template_ud5sari",
+  templateId: "template_v26pcko",
   publicKey: "oAEAz135OVVPAEURk"
 };

@@ -69,6 +69,36 @@
   }
 
   const parallaxElements = [...document.querySelectorAll("[data-parallax]")];
+  const serviceCards = [...document.querySelectorAll(".service-card")];
+  const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+  if (finePointer && !reducedMotion) {
+    serviceCards.forEach((card) => {
+      let frameRequested = false;
+      let pointerX = 50;
+      let pointerY = 0;
+
+      card.addEventListener("pointermove", (event) => {
+        const bounds = card.getBoundingClientRect();
+        pointerX = ((event.clientX - bounds.left) / bounds.width) * 100;
+        pointerY = ((event.clientY - bounds.top) / bounds.height) * 100;
+        if (frameRequested) return;
+
+        frameRequested = true;
+        window.requestAnimationFrame(() => {
+          card.style.setProperty("--pointer-x", `${pointerX}%`);
+          card.style.setProperty("--pointer-y", `${pointerY}%`);
+          frameRequested = false;
+        });
+      }, { passive: true });
+
+      card.addEventListener("pointerleave", () => {
+        card.style.setProperty("--pointer-x", "50%");
+        card.style.setProperty("--pointer-y", "0%");
+      }, { passive: true });
+    });
+  }
+
   const progressBar = document.querySelector(".scroll-progress span");
   if (parallaxElements.length || progressBar) {
     let frameRequested = false;
